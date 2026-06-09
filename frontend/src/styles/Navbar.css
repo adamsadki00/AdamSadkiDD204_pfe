@@ -1,0 +1,104 @@
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: var(--white-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-gold);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.user-menu {
+    position: relative;
+}
+
+.user-menu span {
+    color: var(--gray-text);
+    margin-right: 10px;
+}
+
+.logout-btn {
+    background: transparent;
+    border: 1px solid var(--primary-gold);
+    color: var(--primary-gold);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: var(--primary-gold);
+    color: var(--dark-bg);
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--secondary-dark);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    min-width: 200px;
+    margin-top: 10px;
+}
+
+.user-menu:hover .dropdown {
+    display: block;
+}
+
+.dropdown a,
+.dropdown button {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--white-text);
+    cursor: pointer;
+}
+
+.dropdown a:hover,
+.dropdown button:hover {
+    background: rgba(212, 175, 55, 0.1);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}

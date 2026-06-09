@@ -1,0 +1,85 @@
+.admin-dashboard {
+  width: 100%;
+}
+
+.page-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.stat-card h3 {
+  font-size: 32px;
+  margin: 0;
+  color: var(--primary-gold);
+}
+
+.stat-card p {
+  margin: 5px 0 0;
+}
+
+.stat-icon {
+  font-size: 40px;
+}
+
+.recent-bookings {
+  padding: 25px;
+}
+
+.recent-bookings h2 {
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(212,175,55,0.1);
+}
+
+.table-container th {
+  color: var(--primary-gold);
+}
+
+.booking-status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.booking-status.pending {
+  background: rgba(255,193,7,0.2);
+  color: #ffc107;
+}
+
+.booking-status.confirmed {
+  background: rgba(40,167,69,0.2);
+  color: #28a745;
+}
+
+.booking-status.cancelled {
+  background: rgba(220,53,69,0.2);
+  color: #dc3545;
+}

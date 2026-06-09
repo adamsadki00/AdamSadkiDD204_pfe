@@ -1,0 +1,34 @@
+
+.about-page {
+    padding-top: 120px;
+    min-height: 100vh;
+}
+
+.about-content {
+    padding: 40px;
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: var(--gray-text);
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 48px;
+    color: var(--primary-gold);
+}
