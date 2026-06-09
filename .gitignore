@@ -12,7 +12,7 @@ frontend/build/
 frontend/dist/
 frontend/.env
 
-# ===== عام =====
+
 .DS_Store
 Thumbs.db
 *.log
