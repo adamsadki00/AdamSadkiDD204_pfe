@@ -28,7 +28,7 @@ class RoomController extends Controller
         // Validate incoming request data
         // 'image' is required here so no need for extra check after
         $request->validate([
-            'title' => 'required|string',
+            'room_number' => 'required|string|unique:rooms,room_number',
             'description' => 'required|string',
             'price' => 'required|numeric',
             'capacity' => 'required|integer',
@@ -43,7 +43,7 @@ class RoomController extends Controller
 
         // Create the room record in the database
         $room = Room::create([
-            'title' => $request->title,
+            'room_number' => $request->room_number,
             'description' => $request->description,
             'price' => $request->price,
             'capacity' => $request->capacity,
