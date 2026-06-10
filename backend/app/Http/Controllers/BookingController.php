@@ -10,9 +10,15 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+   public function index(Request $request)
 {
-    $bookings = Booking::with(['user', 'room'])->get();
+    if ($request->user()->role === 'admin') {
+        $bookings = Booking::with(['user', 'room'])->get();
+    } else {
+        $bookings = Booking::with(['user', 'room'])
+            ->where('user_id', $request->user()->id)
+            ->get();
+    }
 
     return response()->json($bookings);
 }
