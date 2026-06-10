@@ -13,19 +13,25 @@ const roomService = {
     },
 
     createRoom: async (roomData) => {
-        const formData = new FormData();
-        for (const key in roomData) {
-            if (roomData[key] !== null && roomData[key] !== undefined) {
-                formData.append(key, roomData[key]);
-            }
+    const formData = new FormData();
+    for (const key in roomData) {
+        if (roomData[key] !== null && roomData[key] !== undefined) {
+            formData.append(key, roomData[key]);
         }
-        const response = await API.post('/rooms', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        });
-        return response.data;
-    },
+    }
+    
+    // ✅ zid hadi bash tchoufi shu katb3at
+    for (let [key, value] of formData.entries()) {
+        console.log(key, ':', value);
+    }
+    
+    const response = await API.post('/rooms', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        }
+    });
+    return response.data;
+},
 
     updateRoom: async (id, roomData) => {
         const formData = new FormData();

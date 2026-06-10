@@ -45,7 +45,7 @@ const RoomManagementPage = () => {
       resetForm();
       fetchRooms();
     } catch (err) {
-      console.error(err);
+      console.error('Validation errors:', err.response?.data);
     }
   };
 

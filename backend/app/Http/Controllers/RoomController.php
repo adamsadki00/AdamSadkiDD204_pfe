@@ -28,13 +28,13 @@ class RoomController extends Controller
         // Validate incoming request data
         // 'image' is required here so no need for extra check after
         $request->validate([
-            'room_number' => 'required|string|unique:rooms,room_number',
-            'description' => 'required|string',
-            'price' => 'required|numeric',
-            'capacity' => 'required|integer',
-            'type' => 'required|string',
-            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-        ]);
+    'room_number' => 'required|string|unique:rooms,room_number',
+    'description' => 'required|string',
+    'price' => 'required|numeric',
+    'capacity' => 'required|integer',
+    'type' => 'required|string',
+    'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:5120', // ✅ zidna webp u kberna size l 5MB
+]);
 
         // Store image in storage/app/public/images
         // asset('storage/...') → generates full public URL for the image
@@ -94,7 +94,7 @@ class RoomController extends Controller
             'capacity' => 'sometimes|integer',
             'type' => 'sometimes|string',
             'status' => 'sometimes|in:available,occupied,maintenance',
-            'image' => 'sometimes|image|mimes:jpg,jpeg,png|max:2048',
+            'image' => 'sometimes|image|mimes:jpg,jpeg,png,webp|max:5120', // ✅ zidna webp u kberna size l 5MB
         ]);
 
         // Keep the current image URL by default
